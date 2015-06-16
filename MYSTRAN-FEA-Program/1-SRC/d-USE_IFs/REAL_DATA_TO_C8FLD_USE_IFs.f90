@@ -1,0 +1,6 @@
+      MODULE REAL_DATA_TO_C8FLD_USE_IFs
+
+! USE Interface statements for all subroutines called by SUBROUTINE REAL_DATA_TO_C8FLD
+! No subrs CALL'd by SUBROUTINE REAL_DATA_TO_C8FLD
+
+      END MODULE REAL_DATA_TO_C8FLD_USE_IFs

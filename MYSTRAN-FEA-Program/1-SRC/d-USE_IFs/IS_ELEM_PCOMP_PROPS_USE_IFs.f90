@@ -1,0 +1,6 @@
+      MODULE IS_ELEM_PCOMP_PROPS_USE_IFs
+
+! USE Interface statements for all subroutines called by SUBROUTINE IS_ELEM_PCOMP_PROPS
+! No subrs CALL'd by SUBROUTINE IS_ELEM_PCOMP_PROPS
+
+      END MODULE IS_ELEM_PCOMP_PROPS_USE_IFs

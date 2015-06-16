@@ -1,0 +1,40 @@
+! ##################################################################################################################################
+
+   MODULE EMG_Interface
+
+   INTERFACE
+
+      SUBROUTINE EMG ( INT_ELEM_ID, OPT, WRITE_WARN, CALLING_SUBR )
+
+ 
+      USE PENTIUM_II_KIND, ONLY       :  BYTE, LONG, DOUBLE
+      USE IOUNT1, ONLY                :  WRT_BUG, WRT_ERR, WRT_LOG, ERR, F04, F06
+      USE SCONTR, ONLY                :  BLNK_SUB_NAM, FATAL_ERR, MBUG, MEDAT0_CUSERIN, MELDOF, MEMATC, MOFFSET, NSUB, NTSUB
+      USE SCONTR, ONLY                :  DEDAT_Q4_MATANG_KEY, DEDAT_Q4_POFFS_KEY, DEDAT_Q4_SHELL_KEY, DEDAT_Q4_THICK_KEY,          &
+                                         DEDAT_T3_MATANG_KEY, DEDAT_T3_POFFS_KEY, DEDAT_T3_SHELL_KEY, DEDAT_T3_THICK_KEY,          &
+                                         WARN_ERR
+      USE TIMDAT, ONLY                :  TSEC
+      USE DEBUG_PARAMETERS, ONLY      :  DEBUG
+      USE PARAMS, ONLY                :  SUPINFO, SUPWARN
+      USE SUBR_BEGEND_LEVELS, ONLY    :  EMG_BEGEND
+      USE CONSTANTS_1, ONLY           :  CONV_DEG_RAD, CONV_RAD_DEG, ZERO
+      USE MODEL_STUF, ONLY            :  CAN_ELEM_TYPE_OFFSET, EDAT, EID, EPNT, ETYPE, ISOLID, MATANGLE, NUM_EMG_FATAL_ERRS,       &
+                                         PCOMP_PROPS, PLY_NUM, TE_IDENT, THETAM, TYPE, XEL
+
+      IMPLICIT NONE
+
+      CHARACTER(LEN=*), INTENT(IN)    :: CALLING_SUBR       ! Name of subr that called this one
+      CHARACTER( 1*BYTE), INTENT(IN)  :: OPT(6)             ! Array of EMG option indicators explained above
+      CHARACTER(LEN=*), INTENT(IN)    :: WRITE_WARN         ! If 'Y" write warning messages, otherwise do not
+      CHARACTER( 1*BYTE)              :: RED_INT_SHEAR = 'N'! If 'Y', use Gaussian weighted average of B matrices for shear terms
+ 
+      INTEGER(LONG), INTENT(IN)       :: INT_ELEM_ID        ! Internal element ID for which
+      INTEGER(LONG)                   :: INT41,INT42        ! An integer used in getting MATANGLE
+      INTEGER(LONG), PARAMETER        :: SUBR_BEGEND = EMG_BEGEND
+ 
+      END SUBROUTINE EMG
+
+   END INTERFACE
+
+   END MODULE EMG_Interface
+

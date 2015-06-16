@@ -1,0 +1,6 @@
+      MODULE WRITE_MEM_SUM_TO_F04_USE_IFs
+
+! USE Interface statements for all subroutines called by SUBROUTINE WRITE_MEM_SUM_TO_F04
+! No subrs CALL'd by SUBROUTINE WRITE_MEM_SUM_TO_F04
+
+      END MODULE WRITE_MEM_SUM_TO_F04_USE_IFs

@@ -1,0 +1,6 @@
+      MODULE CHK_ARRAY_ALLOC_STAT_USE_IFs
+
+! USE Interface statements for all subroutines called by SUBROUTINE CHK_ARRAY_ALLOC_STAT
+! No subrs CALL'd by SUBROUTINE CHK_ARRAY_ALLOC_STAT
+
+      END MODULE CHK_ARRAY_ALLOC_STAT_USE_IFs

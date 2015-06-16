@@ -1,0 +1,41 @@
+! ##################################################################################################################################
+
+   MODULE CHK_ARRAY_ALLOC_STAT_Interface
+
+   INTERFACE
+
+      SUBROUTINE CHK_ARRAY_ALLOC_STAT
+
+
+      USE SCONTR, ONLY                :  LINKNO
+      USE IOUNT1, ONLY                :  F06, IN4FIL, IN4FIL_NUM
+      USE ARPACK_MATRICES_1
+      USE COL_VECS
+      USE DOF_TABLES
+      USE EIGEN_MATRICES_1
+      USE EMS_ARRAYS
+      USE FEMAP_ARRAYS
+      USE FULL_MATRICES
+      USE LAPACK_DPB_MATRICES
+      USE LINK9_STUFF
+      USE MODEL_STUF
+      USE NONLINEAR_PARAMS
+      USE INPUTT4_MATRICES
+      USE RIGID_BODY_DISP_MATS
+      USE SCRATCH_MATRICES
+      USE SPARSE_ALG_ARRAYS
+      USE SPARSE_MATRICES
+      USE STF_ARRAYS
+      USE STF_TEMPLATE_ARRAYS
+      USE OUTPUT4_MATRICES
+
+      IMPLICIT NONE
+
+      INTEGER(LONG), PARAMETER        :: NUM_NAMES = 585   ! Number of arrays to check
+
+      END SUBROUTINE CHK_ARRAY_ALLOC_STAT
+
+   END INTERFACE
+
+   END MODULE CHK_ARRAY_ALLOC_STAT_Interface
+

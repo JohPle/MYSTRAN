@@ -1,0 +1,66 @@
+ID F007,Femap
+SOL 1
+TIME 5 
+CEND
+  TITLE = RBE3 EXAMPLE
+  ECHO       = SORT
+  DISP       = ALL
+  OLOA       = ALL
+  SPCF       = ALL
+  GPFO       = ALL
+  MPCF       = ALL
+  ELFO(BOTH) = ALL
+  STRESS     = ALL
+  SPC = 1
+SUBCASE 1 
+  LABEL = 1000 lb shear
+  LOAD = 1
+SUBCASE 2
+  LABEL = 1000 lb axial
+  LOAD = 2
+BEGIN BULK
+$
+$ SPC's for strucure using RBE3
+$
+SPC1    1       123456  100     108     116     124
+$
+$ Grids for structure using RBE3
+$
+GRID     100              2.      2.      0.
+GRID     108             -2.      2.      0.
+GRID     116             -2.     -2.      0.
+GRID     124              2.     -2.      0.
+GRID    1000              2.      2.      5.
+GRID    1008             -2.      2.      5.
+GRID    1016             -2.     -2.      5. 
+GRID    1024              2.     -2.      5.
+GRID    9999              0.      0.     10.
+$
+RBE3    9999            9999    123456  1.      123     1000    1008    +       
++       1016    1024
+CBAR    11      10      100     1000    1.      0.      0.
+CBAR    12      10      108     1008    1.      0.      0.
+CBAR    13      10      116     1016    1.      0.      0.
+CBAR    14      10      124     1024    1.      0.      0.
+$
+CBAR    21      10      1000    1008    0.      0.      1.
+CBAR    22      10      1008    1016    0.      0.      1.
+CBAR    23      10      1016    1024    0.      0.      1.
+CBAR    24      10      1024    1000    0.      0.      1.
+$
+PBAR    10      20      1.      1.      1.      1.
+$
+MAT1    20      10.+6   4.+6                                            +
++       10000.  10000.  10000.
+$
+FORCE   1       9999            1.      0.      100000.    0.
+FORCE   2       9999            1.      0.         0.   100000.
+$
+PARAM   SOLLIB   IntMKL
+PARAM   GRDPNT   0
+PARAM   POST     -1
+$
+DEBUG   192     2                                                       GPFO summary
+DEBUG   200     1                                                       ANS
+$
+ENDDATA

@@ -1,0 +1,6 @@
+      MODULE SET_FILE_CLOSE_STAT_USE_IFs
+
+! USE Interface statements for all subroutines called by SUBROUTINE SET_FILE_CLOSE_STAT
+! No subrs CALL'd by SUBROUTINE SET_FILE_CLOSE_STAT
+
+      END MODULE SET_FILE_CLOSE_STAT_USE_IFs

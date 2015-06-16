@@ -1,0 +1,9 @@
+Debug:
+-----
+LF95 -nfix -in -f95 -c -info  -chk  -pca  -stchk  -trace  -ap  -g -nco  -MOD
+
+
+
+Production:
+----------
+LF95 -nfix -in -f95 -c -info -nchk -npca -nstchk -ntrace -nap -ng -w -ncover -o1 -nsav  -MOD

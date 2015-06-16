@@ -1,0 +1,50 @@
+YID 2 CELL BEAM EIGENVALUES
+SOL MODES
+CEND
+TITLE  = EIGENVALUES OF 2 CELL BEAM BENDING IN 1 PLANE
+SUBT   = MGIV METHOD. DON'T NEED ASET BUT INCLUDE IT TO GET COMP WITH GIV RUN
+LABEL  = CHECK GUYAN REDUCTION ALGORITHM. KEEP 2 DOF'S ON OUTER GRID IN A-SET
+METHOD = 1
+SPC    = 123
+DISP          = ALL
+ECHO          = UNSORT
+ELFORCE(BOTH) = ALL
+GPFORCE       = ALL
+MEFFMASS      = ALL
+MPCFORCE      = ALL
+MPFACTOR      = ALL
+SPCFORCE      = ALL
+STRESS        = ALL
+BEGIN BULK
+$
+EIGRL   1               1000.                                           
+$
+SPC1    123     26      101
+$
+GRDSET                                                  1345
+$
+GRID    101               0.    0.      0.
+GRID    102              10.    0.      0.
+GRID    103              20.    0.      0.
+$
+CBAR    11      10      101     102     0.      1.      0.
+CBAR    12      10      102     103     0.      1.      0.
+$
+PBAR    10      10      .01     .1      .1      .1
+$
+MAT1    10      1.+7            .33     .1      1.                      +MAT1
+$
+ASET1   26      103
+$
+PARAM   SOLLIB   IntMKL
+PARAM   GRDPNT   0
+PARAM   POST     -1
+PARAM   WTMASS   .002591
+$
+DEBUG   185     1
+DEBUG   192     2                                                       GPFO summary
+DEBUG   200     1                                                       ANS
+$
+ENDDATA
+
+

@@ -1,0 +1,6 @@
+      MODULE WRITE_GRID_COORDS_USE_IFs
+
+! USE Interface statements for all subroutines called by SUBROUTINE WRITE_GRID_COORDS
+! No subrs CALL'd by SUBROUTINE WRITE_GRID_COORDS
+
+      END MODULE WRITE_GRID_COORDS_USE_IFs
